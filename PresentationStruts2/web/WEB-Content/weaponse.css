@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Jul 6, 2018, 12:08:08 PM
+    Author     : thien
+*/
+ div{float: left;font-family: arial;}
+            a{text-decoration: none}
+            #menu{width: 5%;height: 660px;border: 1px solid lightGray;overflow: hidden;background-image: url(Images/white.png);position: fixed;z-index: 1;left: 0px;top: 0px;color: rgba(0,0,0,0.7)}
+            #javis{width: 100%;height: 50px;border: 1px solid lightGray;padding-bottom: 10px}
+
+            #javis {font-size: 20px;font-weight:bold;}
+            #choose{width: 100%}
+            #table{width: 100%;margin-top: 100px}
+            .material-icons{padding-left: 10px;margin: 18px}
+            .menu{width: 70%;margin-bottom: 20px}
+            #menu:hover{
+                width: 20%;z-index: 2;transition: 0.5s
+            }
+            #header{width: 98%;height: 40px;border: 1px solid lightGray;position: fixed;z-index: 0;text-align: right;padding-right: 10px;font-size: 20px;background-image: url(Images/white.png);padding-top: 20px;top: 0px}
+            .logOut{position: relative;bottom: 20px;width: 90%;}
+            #main{width: 94.5%;position: absolute;z-index: -1;left: 70px;top: 60px;height: 590px;background-color: white}
+            #detail{width: 90%;height: 500px;border: 1px solid lightgray;position: relative;left: 70px;top: 50px;background-image: url(Images/white.png)}
+            #detail1{width: 70%;height:500px;overflow: scroll}
+            #detail2{width: 29.5%;height:500px;border-left: 1px solid lightgray}
+            #detail1 table {border: 1px solid black;color: black;position: relative;top:100px;left: 50px;width: 80%;text-align: center}
+            .button{position: relative;top: 200px;left: 130px;margin: 10px;float: left}
+            .img{width: 50px;position: relative}
+            #usertable tr td {padding-left: 10px}
+            #usertable{position: relative;top: 200px}
+            #action{
+                width: 100%;float: left;height: 300px
+            }
+
+            .img:hover {transform: scale(1.05);transition: 0.5s}
+            #detailImage{width: 100px;height: 100px;background-size: cover;border: 1px solid black;position: relative;
+                         left: 120px;top: 50px}
+            #user-img{width: 100px;height: 100px}
+            #insert{width: 100%;background-color: rgba(0,0,0,0.7);height:600px;position: relative;
+                    z-index: 5;bottom: 500px;visibility: hidden }
+            #detailInfo{width: 100%;float: left}
+            .detailInfo{margin: 50px}
+            #missionInfo{height: 50px}
+            #detailInfo table{border-spacing: 20px;position: relative;top: 70px}
+            #loadImage{position: relative;top: 60px;left: 70px}
+            #insertDetail{position: relative;left:100px;top: 70px;color: whitesmoke;border: 1px solid lightslategray;border-radius: 3%;font-size: 25px;padding: 20px;width: 70%}
+            #insertDetail table{border-spacing: 20px;position: relative;left: 100px;}
+            #search{width: 70%;height: 20px}
+            #close:hover{transform: scale(1.5)}
+            #insertFile{position: relative;top:0px;left: 20px;height: 380px;top: 50px;width: 300px;}
+            .name{position: relative;top:50px}
+            #insertFileImage{width: 100%;height: 350px;border: 1px solid wheat;border-radius: 3%;overflow: hidden;}

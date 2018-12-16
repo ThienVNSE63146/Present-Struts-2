@@ -1,0 +1,218 @@
+<!DOCTYPE struts PUBLIC
+"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+    <!-- Configuration for the default package. -->
+    <package name="default" extends="struts-default">
+        <action name="login" class="thienvn.beans.LoginAction">
+            <result name="admin">admin.jsp</result>
+            <result name="user">user.jsp</result>
+            <result name="userV">userV.jsp</result>
+            <result name="error">error.jsp</result>
+        </action>
+       <action name="search" class="thienvn.beans.SearchAction">
+           <result name="success">admin.jsp</result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="load" class="thienvn.beans.LoadAction">
+           <result name="success">admin.jsp</result>
+       </action>
+       <action name="update" class="thienvn.beans.UpdateAction">
+           <result name="success" type="redirectAction" >
+               <param name="actionName">load</param>
+               </result>
+           <result name="error">error.jsp</result>
+       </action>
+        <action name="delete" class="thienvn.beans.DeleteAction">
+           <result name="success" type="redirectAction" >
+               <param name="actionName">load</param>
+               </result>
+           <result name="error">error.jsp</result>
+       </action>
+        <action name="insert" class="thienvn.beans.InsertAction">
+            <exception-mapping exception="java.sql.SQLException" result="input"/>
+           <result name="success" type="redirectAction" >
+               <param name="actionName">load</param>
+               </result>
+           <result name="error">error.jsp</result>
+           <result name="input">admin.jsp</result>
+       </action>
+       <action name="loadMission" class="thienvn.beans.LoadMission">
+           <result name="success">mission.jsp</result>
+       </action>
+        <action name="searchMission" class="thienvn.beans.SearchMission">
+           <result name="success">mission.jsp</result>
+       </action>
+        <action name="deleteMission" class="thienvn.beans.DeleteMission">
+           <result name="success" type="redirectAction">
+               <param name="actionName">loadMission</param>
+           </result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="showMissionDetail" class="thienvn.beans.ShowMissionDetail">
+           <result name="success"> missionDetail.jsp</result>
+       </action>
+       <action name="updateMission" class="thienvn.beans.UpdateMission">
+           <result name="success" type="redirectAction">
+               <param name="actionName">showMissionDetail</param>
+               <param name="ID">${MissionID}</param>
+           </result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="loadCombobox" class="thienvn.beans.LoadCombobox">
+           <result name="success">insertMission.jsp</result>
+       </action>
+       <action name="insertMission" class="thienvn.beans.InsertMission">
+           <result name="success" type="redirectAction">
+               <param name="actionName">loadMission</param>
+           </result>
+           <result name="error">error.jsp</result>
+           <result name="input">insertMission.jsp</result>
+       </action>
+       <action name="loadArmor" class="thienvn.beans.LoadArmor">
+           <result name="success">armor.jsp</result>
+       </action>
+        <action name="searchArmor" class="thienvn.beans.SearchArmor">
+           <result name="success">armor.jsp</result>
+       </action>
+         <action name="updateArmor" class="thienvn.beans.UpdateArmor">
+           <result name="success" type="redirectAction" >
+               <param name="actionName">loadArmor</param>
+               </result>
+           <result name="error">error.jsp</result>
+       </action>
+         <action name="insertArmor" class="thienvn.beans.InsertArmor">
+           <exception-mapping exception="java.sql.SQLException" result="input"/>
+           <result name="success" type="redirectAction">
+               <param name="actionName">loadArmor</param>
+           </result>
+           <result name="error">error.jsp</result>
+           <result name="input">armor.jsp</result>
+       </action>
+        <action name="loadWeaponse" class="thienvn.beans.LoadWeaponse">
+           <result name="success">weaponse.jsp</result>
+       </action>
+        <action name="searchWeaponse" class="thienvn.beans.SearchWeaponse">
+           <result name="success">weaponse.jsp</result>
+       </action>
+        <action name="updateWeaponse" class="thienvn.beans.UpdateWeaponse">
+           <result name="success" type="redirectAction" >
+               <param name="actionName">loadWeaponse</param>
+               </result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="addToMission" class="thienvn.beans.AddToMission">
+           <result name="success">insertMission.jsp</result>
+       </action>
+         <action name="addAUser" class="thienvn.beans.AddAUser">
+           <result name="success" type="redirectAction" >
+               <param name="actionName">showMissionDetail</param>
+               <param name="ID">${MissionID}</param>
+               </result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="closeMissionDetail">
+           <result type="redirectAction">
+               <param name="actionName">loadMission</param>
+           </result>
+       </action>
+      <action name="deleteMissionDetail" class="thienvn.beans.DeleteMissionDetail">
+          <result name="success" type="redirectAction" >
+               <param name="actionName">showMissionDetail</param>
+               <param name="ID">${missionID}</param>
+               </result>
+           <result name="error">error.jsp</result>
+       </action>
+        <action name="showWeaponseDetail" class="thienvn.beans.showWeaponseDetail">
+           <result name="success">weaponseDetail.jsp</result>
+       </action>
+        <action name="addAArmor" class="thienvn.beans.AddAArmor">
+           <result name="success" type="redirectAction" >
+               <param name="actionName">showWeaponseDetail</param>
+               <param name="weaponseID">${weaponseID}</param>
+               </result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="deleteWeaponseDetail" class="thienvn.beans.DeleteWeaponseDetail">
+           <result name="success" type="redirectAction" >
+               <param name="actionName">showWeaponseDetail</param>
+               <param name="weaponseID">${weaponseID}</param>
+               </result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="closeWeaponseDetail">
+           <result type="redirectAction">
+               <param name="actionName">loadWeaponse</param>
+           </result>
+       </action>
+       <action name="deleteWeaponse" class="thienvn.beans.DeleteWeaponse">
+           <result name="success" type="redirectAction">
+               <param name="actionName">loadWeaponse</param>
+           </result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="loadComboboxArmor" class="thienvn.beans.LoadComboboxArmor">
+           <result name="success">insertWeaponse.jsp</result>
+       </action>
+       <action name="addToWeaponse" class="thienvn.beans.AddToWeaponse">
+           <result name="success">insertWeaponse.jsp</result>
+       </action>
+       <action name="insertWeaponseDetail" class="thienvn.beans.InsertWeaponseDetail">
+           <result name="success" type="redirectAction">
+               <param name="actionName">loadWeaponse</param>
+           </result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="">
+           <result>index.jsp</result>
+       </action>
+       <action name="updateUserMission" class="thienvn.beans.ShowUserMission">
+           <result name="success">userMission.jsp</result>
+       </action>
+       <action name="deleteArmor" class="thienvn.beans.DeleteArmor">
+           <result name="success" type="redirectAction">
+               <param name="actionName">loadArmor</param>
+           </result>
+       </action>
+       <action name="updateStatus" class="thienvn.beans.UpdateStatus">
+           <result name="success" type="redirectAction">
+               <param name="actionName">updateUserMission</param>
+               <param name="ID">${MissionID}</param>
+           </result>
+           <result name="error">error.jsp</result>
+       </action>
+       <action name="addArmorToMission" class="thienvn.beans.AddArmorToMission">
+           <result name="success" type="redirectAction">
+               <param name="actionName">updateUserMission</param>
+               <param name="ID">%{MissionID}</param>
+           </result>
+       </action>
+       <action name="returnArmor" class="thienvn.beans.ReturnArmor">
+           <result name="success" type="redirectAction">
+               <param name="actionName">updateUserMission</param>
+               <param name="ID">${missionID}</param>
+           </result>
+       </action>
+       <action name="loadProfile" class="thienvn.beans.LoadProfile">
+           <result name="success">profile.jsp</result>
+       </action>
+       <action name="updateUser" class="thienvn.beans.UpdateUser">
+           <result name="success" type="redirectAction">
+               <param name="actionName">loadProfile</param>
+           </result>
+       </action>
+        <action name="searchUser" class="thienvn.beans.SearchUser">
+           <result name="success">
+              user.jsp
+           </result>
+       </action>
+       <action name="loadUserMission" class="thienvn.beans.LoadUserMission">
+           <result name="success" type="redirectAction">
+               <param name="actionName">login</param>
+               <param name="username">${username}</param>
+               <param name="password">${password}</param>
+           </result>
+       </action>
+    </package>
+</struts>
